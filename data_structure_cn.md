@@ -45,7 +45,7 @@ images文件夹中包含四个子文件夹，分别为cam_fisheye、cam_left、c
 
 ## 末端执行器位姿说明
 
-`ee_pose.csv`文件包含cam_rgb坐标系下左右末端执行器（左右手手背中心）位姿，其中：
+`XXX_0NN_ee_pose.csv`文件（XXX为对应的轨迹文件夹名称）包含cam_rgb坐标系下左右末端执行器（左右手手背中心）位姿，其中：
 
 - `seq`：记录序列号
 - `timestamp`：时间戳（单位：纳秒）

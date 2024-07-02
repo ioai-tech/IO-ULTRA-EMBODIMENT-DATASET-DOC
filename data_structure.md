@@ -8,7 +8,7 @@ You can fill in [here](https://forms.gle/fDdyipTKDZaL34zC6) to join the waiting 
 
 ## Dataset Structure
 
-Each group of data is a tar compressed package, named XXX.tar, and each compressed package contains several tracks, each track is a folder, and the folder name is from XXX_000 to XXX_00N, where N is the number of tracks in each group of data.
+Each group of data is a tar compressed package, named XXX.tar, and each compressed package contains several trajectories, each track is a folder, and the folder name is from XXX_000 to XXX_00N, where N is the number of trajectories in each group of data.
 
 Each folder contains the following files:
 
@@ -46,7 +46,7 @@ For certain perspectives, there may be missing frames, which means that the imag
 
 ## End Effector Pose Description
 
-The `ee_pose.csv` file contains the poses of the left and right end-effectors (center of the back of the left and right hands) in the cam_rgb coordinate system. The columns are as follows:
+The `XXX_0NN_ee_pose.csv` file (where XXX is the corresponding trajectory folder name) contains the poses of the left and right end effectors (center of the back of the left and right hands) in the cam_rgb coordinate system. The columns are as follows:
 
 - `seq`: Record sequence number
 - `timestamp`: Timestamp (nanoseconds)

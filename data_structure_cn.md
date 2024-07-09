@@ -73,7 +73,7 @@ images文件夹中包含五个子文件夹，分别为cam_fisheye、cam_left、c
 
 ## Mocap数据说明
 
-`mocap/*.csv`文件包含mocap数据，其中：
+`mocap/*.csv`文件包含动捕数据，其中：
 
 - `seq`：记录序列号
 - `timestamp`：时间戳（单位：纳秒）
@@ -81,6 +81,10 @@ images文件夹中包含五个子文件夹，分别为cam_fisheye、cam_left、c
 - 其他数据说明待补充
 
 > 部分数据由于设备原因存在丢帧，则该行为空
+
+动捕数据传感器与人体骨骼的对应如图所示：
+
+![mocap_skeleton](assets/mocap_skeleton.png)
 
 ## 触觉数据说明
 

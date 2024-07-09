@@ -115,3 +115,39 @@ images文件夹中包含五个子文件夹，分别为cam_fisheye、cam_left、c
 - `left_ee_quat_w, left_ee_quat_x, left_ee_quat_y, left_ee_quat_z：`左末端执行器姿态（四元数）
 - `right_ee_pos_x, right_ee_pos_y, right_ee_pos_z`：右末端执行器位置
 - `right_ee_quat_w, right_ee_quat_x, right_ee_quat_y, right_ee_quat_z`：右末端执行器姿态（四元数）
+
+
+## 相机标定文件格式
+
+如果相机完成了标定，标定文件夹中会包含与相机图像文件夹名称一致的配置文件，例如 cam_fisheye.yml。
+
+文件样例如下：
+
+```yml
+image_width: 1280
+image_height: 1024
+camera_name: cam_fisheye
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [435.09697,   1.3845 , 640.69483,
+           0.     , 433.14429, 510.82893,
+           0.     ,   0.     ,   1.     ]
+distortion_model: equidistant
+distortion_coefficients:
+  rows: 1
+  cols: 4
+  data: [-0.126101, 0.439819, -0.592622, 0.201684]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [435.09697,   1.3845 , 640.69483,   0.     ,
+           0.     , 433.14429, 510.82893,   0.     ,
+           0.     ,   0.     ,   1.     ,   0.     ]
+```

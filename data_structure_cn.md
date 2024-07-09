@@ -13,12 +13,30 @@
 每个文件夹中包含以下文件：
 
 ```
+XXX_[ddd]
 ├── annotation.json
-└── images
-    ├── cam_fisheye
-    ├── cam_left
-    ├── cam_rgb
-    └── cam_right
+├── audio
+│   └── audio_{timestamp}.pcm
+└── images/
+│   ├── cam_fisheye
+│   │   └── [dddddd]_{timestamp}.jpg
+│   ├── cam_left
+│   │   └── [dddddd]_{timestamp}.jpg
+│   ├── cam_rgb
+│   │   └── [dddddd]_{timestamp}.jpg
+│   ├── cam_depth
+│   │   └── [dddddd]_{timestamp}.png
+│   └── cam_right
+│       └── [dddddd]_{timestamp}.jpg
+├── mocap/
+│   └── *.csv
+├── haptics
+│   └── *.csv
+├── calibration
+│   └── *.yml
+└── process_results
+    └── ee_pose.csv
+
 ```
 
 ## 标注文件说明
@@ -35,9 +53,17 @@
 }
 ```
 
+## 音频文件说明
+
+`audio/audio_{timestamp}.pcm`文件包含音频数据，其中：
+
+- `timestamp`：开始录制时的时间戳（单位：纳秒）
+- `audio`：音频数据（16位单通道，采样率为16000Hz），6通道（前4通道数据为麦克风数据）
+
 ## 图像序列说明
 
-images文件夹中包含四个子文件夹，分别为cam_fisheye、cam_left、cam_rgb、cam_right，分别对应相机视角。
+images文件夹中包含五个子文件夹，分别为cam_fisheye、cam_left、cam_rgb、cam_depth、cam_right，分别对应相机视角。
+（cam_depth为深度图像，由于体积较大，未发布至开放平台）
 
 每个子文件夹中包含若干张图像，图像命名格式为`FRAMEID{:06d}_TIMESTAMP{:d}.ext`。FRAMEID范围为标注文件中的start_frame_id到end_frame_id，TIMESTAMP为图像采集时间戳，单位为纳秒，ext为图像格式，深度图像为16位单通道的PNG图像（无损压缩），其他图像为JPEG格式，例如`001505_1716792351875812408.jpg`。
 

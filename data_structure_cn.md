@@ -38,7 +38,6 @@ XXX_[ddd]
 │   └── *.yml
 └── process_results
     └── ee_pose.csv
-
 ```
 
 ## 标注文件说明
@@ -82,6 +81,8 @@ images文件夹中包含五个子文件夹，分别为cam_fisheye、cam_left、c
 
 > 部分数据由于设备原因存在丢帧，则该行为空
 
+坐标系定义可参考 [URDF](https://github.com/ioai-tech/data_example/blob/main/human.urdf)
+
 动捕数据传感器与人体骨骼的对应如图所示：
 
 ![mocap_skeleton](assets/mocap_skeleton.png)
@@ -99,7 +100,10 @@ images文件夹中包含五个子文件夹，分别为cam_fisheye、cam_left、c
 |左脚| touch-l-foot.csv |
 |右脚| touch-r-foot.csv |
 
-手部有13个点位，足底有99个点位，手部数据的范围为[0, 65535]，足底数据的范围为[0, 4095]。数值越小，该点位受到的压力越大。CSV文件头分别如下:
+每只手有10个点位，对应5根手指，对应数据的范围为[0, 65535]，数值越大，该点位受到的压力越大。
+每只足底有99个点位，数据的范围为[0, 4095]。数值越小，该点位受到的压力越大。
+
+CSV文件头分别如下:
 
 |seq|timestamp|contact_0|contact_1|contact_2|contact_3|contact_4|……|
 | --- | --- | --- | --- | --- | --- | --- | --- |
